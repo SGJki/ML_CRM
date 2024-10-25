@@ -13,13 +13,17 @@ class Net():
         b_2 = torch.zeros(num_outputs, dtype=torch.float32, requires_grad=True)
         self.params = [w_1, b_1, w_2, b_2]
 
-        # 定义模型结构
-        self.input_layer = lambda x: x.view(x.shape[0], -1)
-        self.hidden_layer = lambda x: self.activate_func(torch.matmul(x, w_1.t()) + b_1)
-        self.output_layer = lambda x: torch.matmul(x, w_2.t()) + b_2
-
         self._act = None
         self.activate_func(act)
+        # 定义模型结构
+        # self.input_layer = lambda x: x.view(x.shape[0], -1)
+        # self.hidden_layer = lambda x: self._act(torch.matmul(x, w_1.t()) + b_1)
+        # self.output_layer = lambda x: torch.matmul(x, w_2.t()) + b_2
+        self.input_layer = lambda x: x.view(-1, num_inputs)
+        self.hidden_layer = lambda x: self._act(torch.matmul(x, w_1.t()) + b_1)
+        self.output_layer = lambda x: torch.matmul(x, w_2.t()) + b_2
+
+
 
     def activate_func(self, act: str = 'relu'):
         act_func = None
@@ -41,6 +45,7 @@ class Net():
         x = self.input_layer(x)
         x = self._act(self.hidden_layer(x))
         x = self.output_layer(x)
+        # x = x.squeeze(-1)
         return x
 
     def __call__(self, x):
@@ -52,8 +57,8 @@ class NetCls(Net):
     default classification items = 2
     """
 
-    def __init__(self, num_inputs=200, num_hiddens=256, num_outputs=1, cls_items=2, ):
-        super().__init__(num_inputs, num_hiddens, num_outputs)
+    def __init__(self, num_inputs=200, num_hiddens=256, num_outputs=1, cls_items=2, act='relu'):
+        super().__init__(num_inputs, num_hiddens, num_outputs, act)
         self.cls_items = cls_items
         self.fn_logistic = self.logistic
 
@@ -62,7 +67,7 @@ class NetCls(Net):
         return x
 
     def forward(self, x):
-        super().forward(x)
+        x = super().forward(x)
         if self.cls_items == 2:
             x = self.fn_logistic(x)
         return x

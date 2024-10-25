@@ -21,9 +21,8 @@ class Dataset(object):
         features = torch.randn(num, dim)
         a_mat = a * torch.ones(dim, 1)
         # add normal noise
-        labels = ((torch.matmul(features, a_mat)
-                   + b * torch.ones(num, 1))
-                  + torch.tensor(np.random.normal(0, 0.01, size=(num, 1)), dtype=torch.float32))
+        labels = torch.matmul(features, a_mat)+ b
+        labels += torch.tensor(np.random.normal(0, 0.01, size=labels.size()), dtype=torch.float32)
         train_features, test_features = features[:train_num, :], features[train_num:, :]
         train_labels, test_labels = labels[:train_num], labels[train_num:]
         train_dataset1 = torch.utils.data.TensorDataset(train_features, train_labels)
@@ -35,7 +34,7 @@ class Dataset(object):
         return train_dataloader, test_dataloader
 
     @classmethod
-    def data_cls(cls, num=10000, dim=200, mean=1, std=0.5):
+    def data_cls(cls, num=10000, dim=200, mean=10, std=0.1):
         train_num = int(num * cls.ratio)
         features1 = torch.normal(mean, std, size=(num, dim), dtype=torch.float32)
         labels1 = torch.ones(num)

@@ -5,12 +5,12 @@ from .net import Net
 import time
 
 
-def evaluate_accuracy(data_test, net: Net, loss=CrossEntropyLoss()):
+def evaluate_accuracy(data_test, model: Net, loss=CrossEntropyLoss()):
     acc_sum, n = 0.0, 0
     test_l_sum = 0.0
     for X, y in data_test:
-        acc_sum += (net(X).argmax(dim=1) == y).float().sum().item()
-        l = loss(net(X), y).sum
+        acc_sum += (model.forward(X).argmax(dim=1) == y).float().sum().item()
+        l = loss(model.forward(X).squeeze(-1), y).sum()
         test_l_sum += l.item()
         n += y.shape[0]
     return acc_sum / n, test_l_sum / n
@@ -20,12 +20,12 @@ def l2_penalty(w1, w2):
     return ((w1 ** 2).sum() + (w2 ** 2).sum()) / 2
 
 
-def train(net: Net, data_train, data_test,
+def train(model: Net, data_train, data_test,
           loss=CrossEntropyLoss,
           num_epochs=50,
           params=None,
           lr=0.05,
-          optimizer=SGD,
+          optimizer=None,
           penalty=False,
           lambd=1):
 
@@ -35,10 +35,10 @@ def train(net: Net, data_train, data_test,
     for epoch in range(num_epochs):
         train_l_sum, train_acc_sum, n = 0.0, 0.0, 0
         for X, y in data_train:
-            y_hat = net(X)
-            l = loss(y_hat, y)
+            y_hat = model.forward(X)
+            l = loss(y_hat.squeeze(-1), y)
             if penalty:
-                l += lambd * l2_penalty(net.params[0], net.params[2])
+                l += lambd * l2_penalty(model.params[0], model.params[2])
             l = l.sum()
 
             if optimizer is not None:
@@ -54,7 +54,7 @@ def train(net: Net, data_train, data_test,
             train_l_sum += l.item()
             train_acc_sum += (y_hat.argmax(dim=1) == y).sum().item()
             n += y.shape[0]
-        test_acc, test_l = evaluate_accuracy(data_test, net, loss)
+        test_acc, test_l = evaluate_accuracy(data_test, model, loss)
         train_loss.append(train_l_sum / n)
         test_loss.append(test_l)
         print('epoch %d, loss %.4f, train acc %.3f, test acc %.3f' % (

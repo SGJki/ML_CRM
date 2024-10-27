@@ -21,7 +21,6 @@
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/train-images-idx3-ubyte.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729826624754</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add files">
+      <option name="closed" value="true" />
+      <created>1729991523459</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729991523459</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -5,22 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab00b83-fc56-4ab2-b27b-4b37eb5b4956" name="更改" comment="add files">
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Test/MNIST/raw/t10k-images-idx3-ubyte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Test/MNIST/raw/t10k-images-idx3-ubyte.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Test/MNIST/raw/t10k-labels-idx1-ubyte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Test/MNIST/raw/t10k-labels-idx1-ubyte.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Test/MNIST/raw/train-images-idx3-ubyte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Test/MNIST/raw/train-images-idx3-ubyte.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Test/MNIST/raw/train-labels-idx1-ubyte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Test/MNIST/raw/train-labels-idx1-ubyte.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/t10k-images-idx3-ubyte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/t10k-images-idx3-ubyte.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/t10k-labels-idx1-ubyte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/t10k-labels-idx1-ubyte.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/train-images-idx3-ubyte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/train-images-idx3-ubyte.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/1-3/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-images-idx3-ubyte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-images-idx3-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-labels-idx1-ubyte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-labels-idx1-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/train-images-idx3-ubyte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/train-images-idx3-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/train-labels-idx1-ubyte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/train-labels-idx1-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/t10k-images-idx3-ubyte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/t10k-images-idx3-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/t10k-labels-idx1-ubyte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/t10k-labels-idx1-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-images-idx3-ubyte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-images-idx3-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

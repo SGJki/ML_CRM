@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab00b83-fc56-4ab2-b27b-4b37eb5b4956" name="更改" comment="add files">
+    <list default="true" id="4ab00b83-fc56-4ab2-b27b-4b37eb5b4956" name="更改" comment="remain bugs:can't update params (maybe)&#10;ver_0_1">
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-images-idx3-ubyte" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-images-idx3-ubyte.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-labels-idx1-ubyte" afterDir="false" />
@@ -23,9 +23,6 @@
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MLcodeC_rm/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/utils/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/utils/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/utils/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +57,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.dataset.executor": "Run",
-    "Python.runner.executor": "Debug",
+    "Python.runner.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
@@ -176,13 +173,22 @@
       <option name="project" value="LOCAL" />
       <updated>1729825576678</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="remain bugs:can't update params (maybe)&#10;ver_0_1">
+      <option name="closed" value="true" />
+      <created>1729844793819</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729844793820</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="merge" />
     <MESSAGE value="add files" />
-    <option name="LAST_COMMIT_MESSAGE" value="add files" />
+    <MESSAGE value="remain bugs:can't update params (maybe)&#10;ver_0_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="remain bugs:can't update params (maybe)&#10;ver_0_1" />
   </component>
 </project>

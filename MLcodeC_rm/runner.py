@@ -4,6 +4,20 @@ from utils.draw import draw
 from utils.net import Net, NetCls
 from torch.nn import MSELoss, CrossEntropyLoss, BCELoss
 from torch.optim import SGD
+import random
+import os
+import torch
+from absl import app
+
+
+def seed_torch(seed=100):
+    random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)  # if multi-GPU.
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
 
 
 def regression():
@@ -34,7 +48,9 @@ def mnist_cls(act_func: str, penalty: bool = False):
     draw('FNN for logistic regression', train_loss, test_loss)
 
 
-def main():
+def main(args=' ', *kargs):
+    print(args, kargs)
+    seed_torch()
     # regression()
     # logic_regression()
     mnist_cls('relu')
@@ -45,4 +61,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    app.run(main())

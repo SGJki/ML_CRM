@@ -45,7 +45,7 @@ def mnist_cls(act_func: str, penalty: bool = False):
     optim = SGD(net_mnist.params, lr)
     train_loss, test_loss = train(net_mnist, data_train, data_test, loss=CrossEntropyLoss(), lr=lr, optimizer=optim,
                                   penalty=penalty)
-    draw('FNN for logistic regression', train_loss, test_loss)
+    draw('FNN for mnist classification', train_loss, test_loss)
 
 
 def main(args=' ', *kargs):

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab00b83-fc56-4ab2-b27b-4b37eb5b4956" name="更改" comment="remain bugs:can't update params (maybe)&#10;add torch.seed() for replayable&#10;ver_0_2">
+    <list default="true" id="4ab00b83-fc56-4ab2-b27b-4b37eb5b4956" name="更改" comment="remain bugs:1:can't work properly\n&#10;add new logistic dataset from ai with cursor but still bad\nchange BCEwithlogistic loss&#10;ver_0_3">
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-images-idx3-ubyte" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-images-idx3-ubyte.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Test/MNIST/raw/t10k-labels-idx1-ubyte" afterDir="false" />
@@ -21,10 +21,6 @@
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-images-idx3-ubyte.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/utils/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/utils/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/net.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729992071165</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="remain bugs:1:can't work properly\n&#10;add new logistic dataset from ai with cursor but still bad\nchange BCEwithlogistic loss&#10;ver_0_3">
+      <option name="closed" value="true" />
+      <created>1729997341379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729997341379</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,6 +212,7 @@
     <MESSAGE value="add files" />
     <MESSAGE value="remain bugs:can't update params (maybe)&#10;ver_0_1" />
     <MESSAGE value="remain bugs:can't update params (maybe)&#10;add torch.seed() for replayable&#10;ver_0_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="remain bugs:can't update params (maybe)&#10;add torch.seed() for replayable&#10;ver_0_2" />
+    <MESSAGE value="remain bugs:1:can't work properly\n&#10;add new logistic dataset from ai with cursor but still bad\nchange BCEwithlogistic loss&#10;ver_0_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="remain bugs:1:can't work properly\n&#10;add new logistic dataset from ai with cursor but still bad\nchange BCEwithlogistic loss&#10;ver_0_3" />
   </component>
 </project>

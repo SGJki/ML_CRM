@@ -2,7 +2,7 @@ from utils.dataset import Dataset
 from utils.train import train
 from utils.draw import draw
 from utils.net import Net, NetCls
-from torch.nn import MSELoss, CrossEntropyLoss, BCELoss
+from torch.nn import MSELoss, CrossEntropyLoss, BCELoss, BCEWithLogitsLoss
 from torch.optim import SGD
 import random
 import os
@@ -30,11 +30,11 @@ def regression():
 
 
 def logic_regression():
-    data_train, data_test = Dataset.data_cls()
+    data_train, data_test = Dataset.data_logistic()
     net_log = NetCls()
     lr = 0.05
     optim = SGD(net_log.params, lr)
-    train_loss, test_loss = train(net_log, data_train, data_test, loss=BCELoss(), lr=lr, optimizer=optim)
+    train_loss, test_loss = train(net_log, data_train, data_test, loss=BCEWithLogitsLoss(), num_epochs=100, lr=lr, optimizer=optim)
     draw('FNN for logistic regression', train_loss, test_loss)
 
 
@@ -43,7 +43,7 @@ def mnist_cls(act_func: str, penalty: bool = False):
     net_mnist = NetCls(num_inputs=28 * 28, num_outputs=10, cls_items=10, act=act_func)
     lr = 0.05
     optim = SGD(net_mnist.params, lr)
-    train_loss, test_loss = train(net_mnist, data_train, data_test, loss=CrossEntropyLoss(), lr=lr, optimizer=optim,
+    train_loss, test_loss = train(net_mnist, data_train, data_test, loss=CrossEntropyLoss(), num_epochs=10, lr=lr, optimizer=optim,
                                   penalty=penalty)
     draw('FNN for mnist classification', train_loss, test_loss)
 
@@ -52,8 +52,8 @@ def main(args=' ', *kargs):
     print(args, kargs)
     seed_torch()
     # regression()
-    # logic_regression()
-    mnist_cls('relu')
+    logic_regression()
+    # mnist_cls('relu')
     # mnist_cls('sigmoid')
     # mnist_cls('elu')
     # mnist_cls('tanh')

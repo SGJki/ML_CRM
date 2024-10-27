@@ -21,6 +21,10 @@
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-images-idx3-ubyte.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/Datasets/MNIST/Train/MNIST/raw/train-labels-idx1-ubyte.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/utils/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MLcodeC_rm/utils/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLcodeC_rm/utils/net.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729991219734</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="remain bugs:can't update params (maybe)&#10;add torch.seed() for replayable&#10;ver_0_2">
+      <option name="closed" value="true" />
+      <created>1729992071165</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729992071165</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -4,7 +4,28 @@ import torch
 import pathlib
 import torchvision
 from torchvision import transforms
+from torch.utils.data import Dataset, DataLoader, TensorDataset
 
+
+class Dataset_logistic(Dataset):
+    def __init__(self, num_samples=10000, feature_dim=200, mean=0.5, std_dev=1.0, label=0, train=True):
+        self.num_samples = 7000 if train else 3000
+        self.feature_dim = feature_dim
+        self.train = train
+
+        # 生成特征
+        self.data = np.random.normal(mean, std_dev, (self.num_samples, 1, feature_dim)).astype(np.float32)
+
+        # 生成标签
+        self.targets = np.full(self.num_samples, label, dtype=np.float32)
+
+    def __len__(self):
+        return self.num_samples
+
+    def __getitem__(self, idx):
+        image = torch.from_numpy(self.data[idx])
+        label = torch.tensor(self.targets[idx], dtype=torch.float32)
+        return image, label
 
 class Dataset(object):
     """
@@ -25,16 +46,16 @@ class Dataset(object):
         labels += torch.tensor(np.random.normal(0, 0.01, size=labels.size()), dtype=torch.float32)
         train_features, test_features = features[:train_num, :], features[train_num:, :]
         train_labels, test_labels = labels[:train_num], labels[train_num:]
-        train_dataset1 = torch.utils.data.TensorDataset(train_features, train_labels)
-        test_dataset1 = torch.utils.data.TensorDataset(test_features, test_labels)
-        train_dataloader = torch.utils.data.DataLoader(dataset=train_dataset1, batch_size=cls.batch_size,
+        train_dataset1 = TensorDataset(train_features, train_labels)
+        test_dataset1 = TensorDataset(test_features, test_labels)
+        train_dataloader = DataLoader(dataset=train_dataset1, batch_size=cls.batch_size,
                                                             shuffle=True)
-        test_dataloader = torch.utils.data.DataLoader(dataset=test_dataset1, batch_size=cls.batch_size,
+        test_dataloader = DataLoader(dataset=test_dataset1, batch_size=cls.batch_size,
                                                            shuffle=True)
         return train_dataloader, test_dataloader
 
     @classmethod
-    def data_cls(cls, num=10000, dim=200, mean=10, std=0.1):
+    def data_cls(cls, num=10000, dim=200, mean=0.2, std=2):
         train_num = int(num * cls.ratio)
         features1 = torch.normal(mean, std, size=(num, dim), dtype=torch.float32)
         labels1 = torch.ones(num)
@@ -65,9 +86,26 @@ class Dataset(object):
                                                    transform=transforms.ToTensor())
         test_dataset = torchvision.datasets.MNIST(root=str(test_path), train=False, download=True,
                                                   transform=transforms.ToTensor())
-        train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=cls.batch_size, shuffle=True)
-        test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=cls.batch_size, shuffle=False)
+        train_dataloader = DataLoader(train_dataset, batch_size=cls.batch_size, shuffle=True)
+        test_dataloader = DataLoader(test_dataset, batch_size=cls.batch_size, shuffle=False)
         return train_dataloader, test_dataloader
+
+    @classmethod
+    def data_logistic(cls, num=10000, ratio=0.7, dim=200, std=1.0, label=0, train=True):
+        # 创建两个数据集
+        train_dataset_0 = Dataset_logistic(mean=0.5, label=0, train=True)
+        train_dataset_1 = Dataset_logistic(mean=-0.5, label=1, train=True)
+        test_dataset_0 = Dataset_logistic(mean=0.5, label=0, train=False)
+        test_dataset_1 = Dataset_logistic(mean=-0.5, label=1, train=False)
+
+        # 合并数据集
+        train_dataset = torch.utils.data.ConcatDataset([train_dataset_0, train_dataset_1])
+        test_dataset = torch.utils.data.ConcatDataset([test_dataset_0, test_dataset_1])
+
+        # 创建数据加载器
+        train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+        test_loader = DataLoader(test_dataset, batch_size=1000, shuffle=False)
+        return train_loader, test_loader
 
 
 def main():

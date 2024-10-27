@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 
 
-class Net():
+class Net:
     def __init__(self, num_inputs=500, num_hiddens=256, num_outputs=1, act: str = 'relu'):
         w_1 = torch.tensor(np.random.normal(0, 0.01, (num_hiddens, num_inputs)), dtype=torch.float32,
                            requires_grad=True)
@@ -45,7 +45,7 @@ class Net():
         x = self.input_layer(x)
         x = self._act(self.hidden_layer(x))
         x = self.output_layer(x)
-        # x = x.squeeze(-1)
+        x = x.unsqueeze(-1)
         return x
 
     def __call__(self, x):
@@ -68,6 +68,7 @@ class NetCls(Net):
 
     def forward(self, x):
         x = super().forward(x)
+        x = x.squeeze(-1)
         if self.cls_items == 2:
             x = self.fn_logistic(x)
         return x
